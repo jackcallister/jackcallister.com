@@ -5,7 +5,7 @@ const filePath = './index.html';
 const blogEntry = process.argv[2]; // Takes the blog entry from the command line argument
 
 if (!blogEntry) {
-  console.log('Updating site 🌏. Please hold.');
+  console.log('Commiting and deploying 🌏. Please hold.');
   exec(`git add . && git commit -m "Deploying 🌎" && git push`, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);

@@ -1,19 +1,25 @@
-# 🌏 Human vs Web 🤖
+# 🌏 My Cool Site
 
-Steal this site builder and make it your own. Show the web you're a human and not a robot.
+Steal this site and make it cooler.
 
-### Setup instructions
+### Setup
+
+You may need to setup Github Pages.
+
+It's easier than it looks and you'll get a free website. 
+
+### How to blog
 
 Add entries to your "blog" by running the following command from your terminal:
 
 ```
-node blogger.js "I'm human, I swear"
+node b.js "I'm a human."
 ```
 
-That command adds the entry and does a git push to master. 
+The command adds the blog to your index.html then does a git push. You might need Github, see Setup.
 
-You may need to setup Github Pages. 
+### Local development
 
-It's easier than it looks and you'll get a free website. 
+Just pop the index.html into your browser. 
 
 ✌️

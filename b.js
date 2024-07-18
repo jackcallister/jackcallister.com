@@ -21,33 +21,35 @@ if (!blogEntry) {
 
 }
 
-fs.readFile(filePath, 'utf8', (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-
-  const blogMarker = '<ul>'; // Identify the opening tag of the blog list
-  const newBlogEntry = `${blogMarker}\n  <li>${blogEntry}</li>\n`;
-  const updatedData = data.replace(blogMarker, newBlogEntry);
-
-  fs.writeFile(filePath, updatedData, 'utf8', (err) => {
+if (blogEntry) {
+  fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
       return;
     }
 
-    console.log('Blog updated successfully.');
-    console.log('Updating site 🌏. Please hold.');
-    exec(`git add . && git commit -m "${commitMessage}" && git push`, (error, stdout, stderr) => {
-      if (error) {
-        console.error(`exec error: ${error}`);
+    const blogMarker = '<ul>'; // Identify the opening tag of the blog list
+    const newBlogEntry = `${blogMarker}\n  <li>${blogEntry}</li>\n`;
+    const updatedData = data.replace(blogMarker, newBlogEntry);
+
+    fs.writeFile(filePath, updatedData, 'utf8', (err) => {
+      if (err) {
+        console.error(err);
         return;
       }
-      if (stderr) {
-        console.log(`stderr: ${stderr}`);
-      }
-      console.log(`stdout: ${stdout}`);
+
+      console.log('Blog updated successfully.');
+      console.log('Updating site 🌏. Please hold.');
+      exec(`git add . && git commit -m "${commitMessage}" && git push`, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`exec error: ${error}`);
+          return;
+        }
+        if (stderr) {
+          console.log(`stderr: ${stderr}`);
+        }
+        console.log(`stdout: ${stdout}`);
+      });
     });
   });
-});
+}

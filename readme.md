@@ -11,7 +11,7 @@ You may need to setup Github Pages. It's easier than it looks and you'll get a f
 Add entries to your "blog" by running the following command from your terminal:
 
 ```
-node b.js "I'm a human."
+node blog.js "I'm a human."
 ```
 
 The command adds the blog to your index.html then does a git push. You might need Github, see Setup.

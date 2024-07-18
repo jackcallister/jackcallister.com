@@ -1,6 +1,8 @@
 # 🌏 My Cool Site Builder
 
-Steal this site and make it cooler.
+![Screenshot 2024-07-18 at 12 36 22 PM](https://github.com/user-attachments/assets/b6b56c30-ed42-4cc1-95e4-d8b2f596f028)
+
+Steal this site but you must make it cooler. Do what ever you want with it. I don't gaf.
 
 ### Setup
 

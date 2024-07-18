@@ -1,4 +1,4 @@
-# 🌏 My Cool Site
+# 🌏 My Cool Site Builder
 
 Steal this site and make it cooler.
 
@@ -22,6 +22,6 @@ Just pop the index.html into your browser.
 
 ### Deployment
 
-Run `node b.js` for a git add, commit and push.
+Run `node blog.js` for a git add, commit and push.
 
 ✌️

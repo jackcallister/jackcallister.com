@@ -16,8 +16,9 @@ if (!blogEntry) {
       console.log(`stderr: ${stderr}`);
     }
     console.log(`stdout: ${stdout}`);
+    process.exit(1);
   });
-  process.exit(1);
+
 }
 
 fs.readFile(filePath, 'utf8', (err, data) => {

@@ -6,10 +6,6 @@ const blogEntry = process.argv[2]; // Takes the blog entry from the command line
 const commitMessage = 'Blogged 🤙';
 
 if (!blogEntry) {
-  deploy()
-}
-
-function deploy() {
   console.log('Updating site 🌏. Please hold.');
   exec(`git add . && git commit -m "${commitMessage}" && git push`, (error, stdout, stderr) => {
     if (error) {
@@ -21,6 +17,7 @@ function deploy() {
     }
     console.log(`stdout: ${stdout}`);
   });
+  process.exit(1);
 }
 
 fs.readFile(filePath, 'utf8', (err, data) => {
@@ -40,6 +37,16 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     }
 
     console.log('Blog updated successfully.');
-    deploy()
+    console.log('Updating site 🌏. Please hold.');
+    exec(`git add . && git commit -m "${commitMessage}" && git push`, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+      }
+      console.log(`stdout: ${stdout}`);
+    });
   });
 });

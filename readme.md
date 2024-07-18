@@ -22,4 +22,8 @@ The command adds the blog to your index.html then does a git push. You might nee
 
 Just pop the index.html into your browser. 
 
+### Deployment
+
+Run `node b.js` for a git add, commit and push.
+
 ✌️

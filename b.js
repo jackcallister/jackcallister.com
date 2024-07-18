@@ -3,11 +3,10 @@ const { exec } = require('child_process');
 
 const filePath = './index.html';
 const blogEntry = process.argv[2]; // Takes the blog entry from the command line argument
-const commitMessage = 'Blogged 🤙';
 
 if (!blogEntry) {
   console.log('Updating site 🌏. Please hold.');
-  exec(`git add . && git commit -m "${commitMessage}" && git push`, (error, stdout, stderr) => {
+  exec(`git add . && git commit -m "Deploying 🌎" && git push`, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
@@ -16,9 +15,7 @@ if (!blogEntry) {
       console.log(`stderr: ${stderr}`);
     }
     console.log(`stdout: ${stdout}`);
-    process.exit(1);
   });
-
 }
 
 if (blogEntry) {
@@ -40,7 +37,7 @@ if (blogEntry) {
 
       console.log('Blog updated successfully.');
       console.log('Updating site 🌏. Please hold.');
-      exec(`git add . && git commit -m "${commitMessage}" && git push`, (error, stdout, stderr) => {
+      exec(`git add . && git commit -m "Blogged 🤙" && git push`, (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`);
           return;

@@ -7,7 +7,6 @@ const commitMessage = 'Blogged 🤙';
 
 if (!blogEntry) {
   deploy()
-  process.exit(1);
 }
 
 function deploy() {

@@ -6,8 +6,22 @@ const blogEntry = process.argv[2]; // Takes the blog entry from the command line
 const commitMessage = 'Blogged 🤙';
 
 if (!blogEntry) {
-  console.error('Please provide a blog entry as an argument.');
+  deploy()
   process.exit(1);
+}
+
+function deploy() {
+  console.log('Updating site 🌏. Please hold.');
+  exec(`git add . && git commit -m "${commitMessage}" && git push`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+    if (stderr) {
+      console.log(`stderr: ${stderr}`);
+    }
+    console.log(`stdout: ${stdout}`);
+  });
 }
 
 fs.readFile(filePath, 'utf8', (err, data) => {
@@ -16,8 +30,8 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     return;
   }
 
-  const blogMarker = '</ul>'; // Identify the closing tag of the blog list
-  const newBlogEntry = `<li>${blogEntry}</li>\n  ${blogMarker}`;
+  const blogMarker = '<ul>'; // Identify the opening tag of the blog list
+  const newBlogEntry = `${blogMarker}\n  <li>${blogEntry}</li>\n`;
   const updatedData = data.replace(blogMarker, newBlogEntry);
 
   fs.writeFile(filePath, updatedData, 'utf8', (err) => {
@@ -27,17 +41,6 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     }
 
     console.log('Blog updated successfully.');
-    console.log('Updating site 🌏. Please hold.');
-    // Git commit and push
-    exec(`git add ${filePath} && git commit -m "${commitMessage}" && git push`, (error, stdout, stderr) => {
-      if (error) {
-        console.error(`exec error: ${error}`);
-        return;
-      }
-      if (stderr) {
-        console.log(`stderr: ${stderr}`);
-      }
-      console.log(`stdout: ${stdout}`);
-    });
+    deploy()
   });
 });

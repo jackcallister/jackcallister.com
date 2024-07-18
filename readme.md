@@ -4,6 +4,8 @@
 
 Steal this site but you must make it cooler. Do what ever you want with it. I don't gaf.
 
+View an example <a href="jackcallister.com">here</a>.
+
 ### Setup
 
 You may need to setup Github Pages. It's easier than it looks and you'll get a free website. First sign up to <a href="https://github.com/join">Github</a> then follow this <a href="https://docs.github.com/en/pages/quickstart">Github Pages Quickstart</a>. You'll need about 15-20 minutes.

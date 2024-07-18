@@ -4,9 +4,7 @@ Steal this site and make it cooler.
 
 ### Setup
 
-You may need to setup Github Pages.
-
-It's easier than it looks and you'll get a free website. 
+You may need to setup Github Pages. It's easier than it looks and you'll get a free website. First sign up to <a href="https://github.com/join">Github</a> then follow this <a href="https://docs.github.com/en/pages/quickstart">Github Pages Quickstart</a>. You'll need about 15-20 minutes.
 
 ### How to blog
 

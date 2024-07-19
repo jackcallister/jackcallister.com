@@ -25,7 +25,10 @@ if (blogEntry) {
       return;
     }
 
-    const blogMarker = '<ul>'; // Marker
+    const blogMarker = '<ul id="blog">'; // Marker
+
+    console.log(blogMarker)
+
     const newBlogEntry = `${blogMarker}\n  <li>${blogEntry}</li>\n`;
     const updatedData = data.replace(blogMarker, newBlogEntry);
 

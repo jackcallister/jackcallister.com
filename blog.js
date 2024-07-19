@@ -25,12 +25,14 @@ if (blogEntry) {
       return;
     }
 
-    const blogMarker = '<ul id="blog">'; // Marker
+    const blogMarker = '<ul id="NAH">'; // Marker
 
-    console.log(blogMarker)
+
 
     const newBlogEntry = `${blogMarker}\n  <li>${blogEntry}</li>\n`;
     const updatedData = data.replace(blogMarker, newBlogEntry);
+
+    console.log(updatedData)
 
     fs.writeFile(filePath, updatedData, 'utf8', (err) => {
       if (err) {

@@ -25,7 +25,7 @@ if (blogEntry) {
       return;
     }
 
-    const blogMarker = '<ul>'; // Identify the opening tag of the blog list
+    const blogMarker = '<ul>'; // Marker
     const newBlogEntry = `${blogMarker}\n  <li>${blogEntry}</li>\n`;
     const updatedData = data.replace(blogMarker, newBlogEntry);
 

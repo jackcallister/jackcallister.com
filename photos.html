@@ -1,9 +1,48 @@
-<a href="/" style="margin-bottom: 1em">Back</a>
-  <div style="width:50%; margin-bottom: 1em">
-    <img src="/photos/lust.jpg" style="max-width: 40%;" />
-  </div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div style="width:50%">
-    <img src="/photos/sydney.jpg" style="max-width: 40%;" />
+
+  <title>Jack Calli</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.5">
+
+  <style type="text/css">
+    ul {
+      line-height: 1.5em;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 1em;
+      max-width: 100%;
+      margin: auto;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="/" style="margin-bottom: 1em; display: block;">Back</a>
+
+  <div class="photo-grid">
+    <img src="/photos/gem.jpg" alt="Gem" />
+    <img src="/photos/lust.jpg" alt="Lust" />
+    <img src="/photos/sydney.jpg" alt="Sydney" />
   </div>
-</a>
+</body>
